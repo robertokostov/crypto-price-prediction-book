@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Градење на модел &#8212; CryptoCurrency Price Prediction</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Заклучок" href="conclusion.html" />
+    <link rel="prev" title="Фактори врз вредноста" href="factors.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/btc1.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CryptoCurrency Price Prediction</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Вовед
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="more-about-crypto.html">
+   Повеќе за валутите
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="factors.html">
+   Фактори врз вредноста
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Градење на модел
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Заклучок
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="literature.html">
+   Извори
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/model.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/robertokostov/crypto-price-prediction-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/robertokostov/crypto-price-prediction-book/issues/new?title=Issue%20on%20page%20%2Fmodel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Градење на модел
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Вчитување на библиотеки
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Преземање на податоци
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Проверка на податоци
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Креирање на модел
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#embed">
+     EMBED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Предвидување на резултати
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Исцртување на резултати
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Embed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   Компоненти на предвидување
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Embed
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Градење на модел<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Предвидувањето на вредноста на валутите е тешко, посебно со оглед на тоа колку тој пазар е сè уште склон на нагли промени, а и фактот дека е во порана фаза од својот развој и има уште делови од својот екосистем кои треба да ги додефинира пред да би се прифатил во некоја поопширна употреба. На некој начин е како интернетот во 80тите години. Тогаш се појавил како платформа со отворена технологија која ги збунувала луѓето и користа која тие би ја имале од истата, сè додека не се појавиле фирмите како Amazon, Google и Facebook со јасна идеја за иновации во склоп на таа платформа. Клучниот збор е “Permisionless inovation”, што значи дека секој може да внесе некоја иновација без да бара дозвола од некој друг. Па, баш поради сè ова и не може толку лесно да земе било кој да предвиди како ќе се движи самиот пазар на валутите, а со тоа и сонот на сите, лесно да заработи од истото.</p>
+<p>За градење на моделот ќе користиме библиотека наречена <a class="reference external" href="https://facebook.github.io/prophet/">Prophet</a>, развивана од Facebook, која е популарна конкретно за модели за предвидување на временски податоци. Базирана е со <a class="reference external" href="https://en.wikipedia.org/wiki/Additive_model">Additive model</a> на регресија и се користи за креирање на точни и разумни предвидувања.</p>
+</div>
+<div class="section" id="id2">
+<h1>Вчитување на библиотеки<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>Како и секогаш, ќе почнеме со вчитување на библиотеките кои ќе ни бидат потребни за градење на моделот:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">fbprophet</span> <span class="kn">import</span> <span class="n">Prophet</span>
+<span class="kn">from</span> <span class="nn">fbprophet.plot</span> <span class="kn">import</span> <span class="n">plot_components_plotly</span><span class="p">,</span> <span class="n">plot_plotly</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;$</span><span class="si">{:,.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h1>Преземање на податоци<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>За преземање на податоците ќе ја користиме yfinance библиотеката, со чива помош се пристапува до податоците на Yahoo! Finance. За пример валута ја земавме <a class="reference external" href="https://cardano.org/">Cardano</a>, софтвер кој употребува доста нова технологија и иновации и податоците за вредноста на истиот како валута се од 01 октомври 2017 година:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="s1">&#39;2017-10-01&#39;</span>
+
+<span class="n">ada_df</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;ADA-USD&#39;</span><span class="p">,</span><span class="n">start_date</span><span class="p">,</span> <span class="n">today</span><span class="p">)</span>
+<span class="n">ada_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ada_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="stonks1" src="_images/stonks1.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ada_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="stonks2" src="_images/stonks2.png" /></p>
+<p>Лесно забележлива е промената на вредноста во периодот од една година кој е изминат.</p>
+</div>
+<div class="section" id="id4">
+<h1>Проверка на податоци<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ada_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="sum" src="_images/info.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ada_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="sum" src="_images/sum.png" /></p>
+<p>Поради изворот од кој ги преземавме и типот на податоци кои ги нуди, забележавме дека податоците се доста “чисти” и нема потреба да се извршуваат некакви операции врз нив како би се користеле, што би ја смениле нивната вредност.</p>
+</div>
+<div class="section" id="id5">
+<h1>Креирање на модел<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<p>Две колони се потребни како влез во моделот, датумот и бројката која ќе ја земеме како вредност за тој ден(се одлучивме за вредноста од колоната Open).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ada_df</span><span class="p">[[</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Open&quot;</span><span class="p">]]</span>
+
+<span class="n">new_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Date&quot;</span><span class="p">:</span> <span class="s2">&quot;ds&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Open&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">new_names</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="changed" src="_images/changed.png" /></p>
+<p>За подобра визуелна репрезентација, вчитаните податоци ги прикажуваме со помош на библиотеката Plotly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Time series plot of Cardano ($ADA) Open Price&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">rangeselector</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">buttons</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="nb">dict</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1m&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">stepmode</span><span class="o">=</span><span class="s2">&quot;backward&quot;</span><span class="p">),</span>
+                    <span class="nb">dict</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;6m&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">stepmode</span><span class="o">=</span><span class="s2">&quot;backward&quot;</span><span class="p">),</span>
+                    <span class="nb">dict</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;YTD&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">stepmode</span><span class="o">=</span><span class="s2">&quot;todate&quot;</span><span class="p">),</span>
+                    <span class="nb">dict</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1y&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">stepmode</span><span class="o">=</span><span class="s2">&quot;backward&quot;</span><span class="p">),</span>
+                    <span class="nb">dict</span><span class="p">(</span><span class="n">step</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">rangeslider</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="embed">
+<h2>EMBED<a class="headerlink" href="#embed" title="Permalink to this headline">¶</a></h2>
+<p>Креирање на моделот, предавање на влезните податоци, како и задавање на колку денови од иднината сакаме да се додадат во моделот како предвидена вредност:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">Prophet</span><span class="p">(</span>
+    <span class="n">seasonality_mode</span><span class="o">=</span><span class="s2">&quot;multiplicative&quot;</span> 
+<span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">future</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">make_future_dataframe</span><span class="p">(</span><span class="n">periods</span> <span class="o">=</span> <span class="mi">365</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Приказ на последните денови кои ќе бидат предвидени:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">future</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="future" src="_images/future.png" /></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>Предвидување на резултати<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>Приказ на две предвидувања на резултати:</p>
+<ul class="simple">
+<li><p>следниот ден(утре) од денес:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">next_day</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">forecast</span><span class="p">[</span><span class="n">forecast</span><span class="p">[</span><span class="s1">&#39;ds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">next_day</span><span class="p">][</span><span class="s1">&#39;yhat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>1.8646246112439222</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>сите зададени вредности во денови при креирање на модел:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">forecast</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">future</span><span class="p">)</span>
+
+<span class="n">forecast</span><span class="p">[[</span><span class="s1">&#39;ds&#39;</span><span class="p">,</span> <span class="s1">&#39;yhat&#39;</span><span class="p">,</span> <span class="s1">&#39;yhat_lower&#39;</span><span class="p">,</span> <span class="s1">&#39;yhat_upper&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="prediction" src="_images/prediction.png" /></p>
+<p>Забележуваме дека моделот предвидува зголемување на вредноста за речиси двојно во периодот за една година од денес.</p>
+</div>
+<div class="section" id="id7">
+<h1>Исцртување на резултати<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>Приказ на иманите резултати досега, заедно со додадените предвидувања за периодот од една година од денес:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_plotly</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">forecast</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id8">
+<h2>Embed<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="id9">
+<h1>Компоненти на предвидување<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<p>Моделот на предвидување вклучува неколку компоненти кои во продолжение ги визуелизираме:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_components_plotly</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">forecast</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id10">
+<h2>Embed<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Компонентите кои ги опфаќа предвидувањето вклучуваат:</p>
+<ul class="simple">
+<li><p>анализа на растот на кривата - моделот покажува дека вредноста на криптовалутата Cardano во период од една година сметано од денес ќе има нагорен тренд.</p></li>
+<li><p>сезонска анализа на ниво на месец - моделот покажува тeнденција дека вредноста на валутата е највисока во пролетните месеци, додека најниска во есенските.</p></li>
+<li><p>сезонска анализа на ниво на ден - моделот покажува тенденција дека вредноста на валутата е највисока во петок, додека најниска е во вторник.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="factors.html" title="previous page">Фактори врз вредноста</a>
+    <a class='right-next' id="next-link" href="conclusion.html" title="next page">Заклучок</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Kostov, Marija Sidorenko<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
