@@ -184,21 +184,6 @@ plot_components_plotly(m, forecast)
 
 <a href="./patterns.html">Приказ на компонентите</a>
 
-<html> 
-  <head> 
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("patterns.html"); 
-    });
-    </script> 
-  </head> 
-
-  <body> 
-     <div id="includedContent"></div>
-  </body> 
-</html>
-
 Компонентите кои ги опфаќа предвидувањето вклучуваат:
 
 - анализа на растот на кривата - моделот покажува дека вредноста на криптовалутата Cardano во период од една година сметано од денес ќе има нагорен тренд.
