@@ -116,7 +116,7 @@ fig.update_layout(
 )
 ```
 
-![data](./data.html)
+<a href="./data.html">Приказ на податоците</a>
 
 Креирање на моделот, предавање на влезните податоци, како и задавање на колку денови од иднината сакаме да се додадат во моделот како предвидена вредност:
 
@@ -183,21 +183,6 @@ plot_components_plotly(m, forecast)
 ```
 
 <a href="./patterns.html">Приказ на компонентите</a>
-
-<html> 
-  <head> 
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("patterns.html"); 
-    });
-    </script> 
-  </head> 
-
-  <body> 
-     <div id="includedContent"></div>
-  </body> 
-</html>
 
 Компонентите кои ги опфаќа предвидувањето вклучуваат:
 
