@@ -116,7 +116,7 @@ fig.update_layout(
 )
 ```
 
-<a href="./data.html">Приказ на податоците</a>
+<a href="./data1.html">Приказ на податоците</a>
 
 Креирање на моделот, предавање на влезните податоци, како и задавање на колку денови од иднината сакаме да се додадат во моделот како предвидена вредност:
 
@@ -172,7 +172,7 @@ forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 plot_plotly(m, forecast)
 ```
 
-<a href="./forecast.html">Приказ на излезот</a>
+<a href="./forecast1.html">Приказ на излезот</a>
 
 # Компоненти на предвидување
 
@@ -182,7 +182,7 @@ plot_plotly(m, forecast)
 plot_components_plotly(m, forecast)
 ```
 
-<a href="./patterns.html">Приказ на компонентите</a>
+<a href="./patterns1.html">Приказ на компонентите</a>
 
 Компонентите кои ги опфаќа предвидувањето вклучуваат:
 
